@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+
+
+@media only screen and (min-width: 308px) {
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 95vh;
+        overflow: hidden;
+    }
+}
+
+
+
+/* Imagen con efecto de desvanecido */
+.banner-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.baner-backgroundv {
+    background: url('../images/banner/futuro.png') center/cover no-repeat;
+}
+
+.baner-backgrounds {
+    background: url('../images/banner/sonic.png') center/cover no-repeat;
+}
+
+.baner-backgroundc {
+    background: url('../images/banner/cobra.png') center/cover no-repeat;
+}
+
+.baner-backgroundg {
+    background: url('../images/banner/gladiador.png') center/cover no-repeat;
+}
+
+
+/* Capa de gradiente para el desvanecido */
+.banner-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #000 73%, transparent 100%)
+}
+
+/* Texto sobre la imagen */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 45%;
+    z-index: 2;
+}
+
+.banner-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.banner-text p {
+    opacity: 0.8;
+}
+
+.banner-text a {
+    margin-top: 15px;
+}
+
+
+
+
+.container {
+    max-width: 600px;
+}
+
+.label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-family: "Antonio", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    opacity: 0.8;
+}
+
+.tag {
+    background-color: gray;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.tag.age {
+    background-color: darkred;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.actors {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .banner-text {
+        max-width: 80%;
+    }
+
+    .banner-text h1 {
+        font-size: 2rem;
+    }
+}
+
+body {
+    background-color: black;
+}
+
+.card {
+    aspect-ratio: 16 / 9;
+    /* Mantiene la relación de aspecto */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    /* Aumenta ligeramente el tamaño */
+    opacity: 0.9;
+    /* Agrega un efecto de transparencia */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5) !important;
+    border: 5px solid rgba(255, 255, 255, 0.5) !important;
+
+
+    /* Resalta la card */
+}
+
+.card-active {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2) !important;
+    border: 5px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.card:active {
+    transform: scale(1.05);
+    opacity: 0.8;
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.7) !important;
+    border: 5px solid rgba(255, 255, 255, 0.7) !important;
+}
+
+.card-img-top {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Elimina el subrayado de los enlaces */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    background-color: rgb(0, 0, 0, 0.80);
+    z-index: 1002;
+    /* Asegúrate de que el z-index sea menor que el del botón de cierre */
+}
+
+#videoContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#videoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(187, 186, 186, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+#videoOverlayEnd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(187, 186, 186, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.incompleted {
+    background: linear-gradient(135deg, #3b3b3b, #d6d5d6);
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    color: white;
+}
+
+.completed {
+    background: linear-gradient(135deg, #974ae0, #f0e1ff);
+    color: white;
+}
+
+.over-msg {
+    background: linear-gradient(135deg, #f73434, #f87b8c);
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+#playButton {
+    margin-top: 20px;
+    background: rgb(0, 0, 0, 0.80);
+}
+
+#video {
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 1000;
+}
+
+#cardOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(187, 186, 186, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+
+
+.play-button:hover {
+    background-color: gray !important;
+}
+
+.play-button:hover i {
+    color: white !important
+}
+
+.overlayContainer {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    /* Para centrar contenido si es necesario */
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    /* Opcional: agregar un efecto de overlay */
+    /* Asegura que esté por encima del video */
+}
+
+.bg-footer {
+    background-color: rgb(0, 0, 0, 0.95) !important;
+    color: #fff;
+}
+
+.firma {
+    font-family: "Pacifico", cursive;
+    /* Fuente manuscrita */
+    font-size: 1em;
+    /* Tamaño ligeramente más grande */
+}
